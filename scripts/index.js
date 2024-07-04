@@ -8,16 +8,6 @@ const popupNewCard = document.querySelector('.popup_type_new-card'); // попа
 const popupCloseButtons = document.querySelectorAll('.popup__close'); // кнопки закрытия попапов
 const formNewCard = popupNewCard.querySelector('.popup__form'); // форма создания новой карточки
 
-// @todo: Функция открытия попапа
-function openPopup(popup) {
-  popup.classList.add('popup_opened');
-}
-
-// @todo: Функция закрытия попапа
-function closePopup(popup) {
-  popup.classList.remove('popup_opened');
-}
-
 // @todo: Функция создания карточки
 function createCard({ name, link }, deleteCallback) {
   const cardElement = cardTemplate.querySelector('.card').cloneNode(true);
