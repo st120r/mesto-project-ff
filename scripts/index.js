@@ -2,7 +2,7 @@
 const cardTemplate = document.querySelector('#card-template').content;
 
 // @todo: DOM узлы
-const cardList = document.querySelector('.places__list');
+const cardsContainer = document.querySelector('.places__list');
 const addButton = document.querySelector('.profile__add-button'); // кнопка добавления карточки
 const popupNewCard = document.querySelector('.popup_type_new-card'); // попап для новой карточки
 const popupCloseButtons = document.querySelectorAll('.popup__close'); // кнопки закрытия попапов
@@ -43,7 +43,7 @@ formNewCard.addEventListener('submit', (event) => {
   const cardTitle = formNewCard.querySelector('.popup__input_type_card-name').value;
   const cardImage = formNewCard.querySelector('.popup__input_type_url').value;
   const cardData = createCard({ name: cardTitle, link: cardImage }, deleteCard);
-  cardList.prepend(cardData); // Добавляем новую карточку в начало списка
+  cardsContainer.prepend(cardData); // Добавляем новую карточку в начало списка
   closePopup(popupNewCard); // Закрываем попап после добавления карточки
   formNewCard.reset(); // Сбрасываем форму
 });
@@ -51,5 +51,5 @@ formNewCard.addEventListener('submit', (event) => {
 // @todo: Вывести карточки на страницу
 initialCards.forEach(cardData => {
   const cardElement = createCard(cardData, deleteCard);
-  cardList.append(cardElement);
+  cardsContainer.append(cardElement);
 });
